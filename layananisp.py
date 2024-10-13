@@ -1,4 +1,3 @@
-# Simulasi Database Pengguna
 database = {
     "081234567890": {"saldo": 50000},
     "089876543210": {"saldo": 10000}
@@ -30,11 +29,11 @@ def main_menu():
 
     pilihan = input("Pilih menu: ")
     if pilihan == "1":
-        nomor = input("Masukkan nomor Anda: ")
+        nomor = input("Masukkan nomor pelanggan: ")
         saldo = cek_saldo(nomor)
         print(f"Saldo Anda: {saldo}")
     elif pilihan == "2":
-        pengirim = input("Masukkan nomor Anda: ")
+        pengirim = input("Masukkan nomor Pelanggan: ")
         penerima = input("Masukkan nomor penerima: ")
         jumlah = int(input("Masukkan jumlah pulsa: "))
         hasil = transfer_pulsa(pengirim, penerima, jumlah)
