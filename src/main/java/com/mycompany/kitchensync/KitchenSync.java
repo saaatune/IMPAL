@@ -11,6 +11,7 @@ package com.mycompany.kitchensync;
 public class KitchenSync {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Recipe rcp = new Recipe(1, "Sayur Sop", "Indonesian", "asdfghjkl", "asdfghjkl", 20, 40);
+        rcp.printRecipe();
     }
 }

@@ -13,14 +13,16 @@ public class Recipe {
     private String recipe;
     private String cuisine;
     final String ingridients;
+    final String cookingInstructions;
     private int prepTime;
     private int cookingTime;
     
-    public Recipe(int recipeID, String recipe, String cuisine, String ingridients, int prepTime, int cookingTime){
+    public Recipe(int recipeID, String recipe, String cuisine, String ingridients, String cookingInstructions, int prepTime, int cookingTime){
         this.recipeID = recipeID;
         this.recipe = recipe;
         this.cuisine = cuisine;
         this.ingridients = ingridients;
+        this.cookingInstructions = cookingInstructions;
         this.prepTime = prepTime;
         this.cookingTime = cookingTime;
     }
@@ -48,6 +50,10 @@ public class Recipe {
     public String getIngridients() {
         return ingridients;
     }
+    
+    public String getCookingInstructions(){
+        return cookingInstructions;
+    }
 
     public int getPrepTime() {
         return prepTime;
@@ -68,5 +74,19 @@ public class Recipe {
     public int getTotal(){
         int totalWaktu = getPrepTime() + getCookingTime();
         return totalWaktu;
+    }
+    
+    public void printRecipe() {
+    System.out.println("Recipe " + recipeID + ": " + recipe);
+    System.out.println("Cuisine: " + cuisine);
+    System.out.println("Ingredients: " + ingridients);
+    System.out.println("Cooking Instructions: " + cookingInstructions);
+    System.out.println("Preparation Time: " + prepTime + " minutes");
+    System.out.println("Cooking Time: " + getCookingTime() + " minutes");
+    System.out.println("Total Time: " + getTotal() + " minutes");
+    }
+    
+    public boolean containsIngredient(String ingredient) {
+    return ingridients.contains(ingredient);
     }
 }
